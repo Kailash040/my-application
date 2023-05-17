@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-// import ImageGallery from 'react-image-gallery';
-import axios from "axios";
+import { motion } from "framer-motion";
+import { Reorder } from "framer-motion";
 import img2 from "../images/img2.png";
 import img3 from "../images/img3.png";
 import img4 from "../images/img4.png";
@@ -43,6 +43,16 @@ const Home = () => {
   // from state
   return (
     <div>
+       <motion.div   
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.8,
+        delay: 0.5,
+        ease: [0, 0.71, 0.2, 1.01]
+      }}
+      >
+
       <div className="main_container ">
         <div className="item_container">
           <img src={img2} width="" height="" alt="" />
@@ -117,11 +127,23 @@ const Home = () => {
           <p>Triangle cut, Blue</p>
         </div>
       </div>
-      {/* button div */}
       <div className="button_container">
         <button className="home_btn"> Load More</button>
       </div>
+      </motion.div>
+      {/* button div */}
       {/*  image gallery with thumbnail navigation */}
+      <motion.div   
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.8,
+        delay: 0.5,
+        ease: [0, 0.71, 0.2, 1.01]
+      }}
+      >
+
+     
       <div className="gallery_container">
         <div className="main">
           <img src={wordData.value} height="80%" width="90%" />
@@ -140,7 +162,17 @@ const Home = () => {
           </div>
         </div>
       </div>
+      </motion.div>
       {/*  */}
+      <motion.div    
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.8,
+        delay: 0.5,
+        ease: [0, 0.71, 0.2, 1.01]
+      }}
+      >  
       <div className="form_container">
         <h3> Contact Us</h3>
         <Form onSubmit={handleSubmit}>
@@ -186,6 +218,7 @@ const Home = () => {
           </Button>
         </Form>
       </div>
+      </motion.div>
       {/*  */}
     </div>
   );
